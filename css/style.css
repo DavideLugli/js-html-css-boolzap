@@ -53,6 +53,26 @@ img.avatar {
   color: darkgrey;
 }
 
+.notification-banner {
+  padding: 12px;
+  height: 12%;
+  width: 100%;
+  background-color: LightSkyBlue;
+  align-items: center;
+}
+.notification-banner i {
+  color: white;
+    font-size: 35px;
+    padding-left: 10px;
+}
+
+.notification-text {
+  width: 80%;
+  margin-left: 10px;
+}
+.notification-text h5 {
+  padding-bottom: 5px;
+}
 .chat-wrapper {
   background-color: Turquoise;
   height: 100%;
