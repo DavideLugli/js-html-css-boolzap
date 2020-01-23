@@ -16,14 +16,14 @@ header {
 
 main {
   height: 90vh;
-background-color: #ece5dd;
+  background-color: #ece5dd;
 }
 
 .flex {
   display: flex;
 }
-.wrapper {
 
+.wrapper {
   width: 80%;
   height: 90vh;
   background-color: BlueViolet;
@@ -31,7 +31,7 @@ background-color: #ece5dd;
 }
 
 .account-wrapper {
-  background-color: PaleGreen ;
+  background-color: PaleGreen;
   height: 100%;
   width: 30%;
 }
@@ -40,14 +40,16 @@ background-color: #ece5dd;
   padding: 10px;
   height: 65px;
   width: 100%;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items: center;
   background-color: Gainsboro;
 }
+
 img.avatar {
   border-radius: 50%;
   width: 50px;
 }
+
 .user-icons i {
   padding: 0 10px;
   color: darkgrey;
@@ -60,30 +62,67 @@ img.avatar {
   background-color: LightSkyBlue;
   align-items: center;
 }
+
 .notification-banner i {
   color: white;
-    font-size: 35px;
-    padding-left: 10px;
+  font-size: 35px;
+  padding-left: 10px;
 }
 
 .notification-text {
   width: 80%;
   margin-left: 10px;
 }
+
 .notification-text h5 {
   padding-bottom: 5px;
 }
+
 .div-search {
   background-color: Gainsboro;
   height: 40px;
   padding: 5px;
   justify-content: flex-start;
 }
+
 input.search-chat {
   height: 100%;
   width: 100%;
   border-radius: 5px;
 }
+
+.account-chat-wrapper {
+  height: 70%;
+  width: 100%;
+  background-color: gold;
+  border: 1px solid lightgrey;
+  box-shadow: rgba(0, 0, 0, 0.5);
+  overflow-y: scroll;
+}
+
+.account-list {
+  list-style: none;
+}
+
+.account-list li {
+  align-items: center;
+  justify-content: space-around;
+  height: 60px;
+  width: 100%;
+  position: relative;
+  margin-left: 0;
+  border: 1px solid lightgrey;
+}
+
+.account-list li img {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.account-name {
+  flex-basis: 45%;
+}
+
 .chat-wrapper {
   background-color: Turquoise;
   height: 100%;
