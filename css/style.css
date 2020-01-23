@@ -38,7 +38,7 @@ background-color: #ece5dd;
 
 .user-nav {
   padding: 10px;
-  height: 10%;
+  height: 65px;
   width: 100%;
   justify-content:space-between;
   align-items: center;
@@ -55,7 +55,7 @@ img.avatar {
 
 .notification-banner {
   padding: 12px;
-  height: 12%;
+  height: 75px;
   width: 100%;
   background-color: LightSkyBlue;
   align-items: center;
@@ -72,6 +72,17 @@ img.avatar {
 }
 .notification-text h5 {
   padding-bottom: 5px;
+}
+.div-search {
+  background-color: Gainsboro;
+  height: 40px;
+  padding: 5px;
+  justify-content: flex-start;
+}
+input.search-chat {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
 }
 .chat-wrapper {
   background-color: Turquoise;
