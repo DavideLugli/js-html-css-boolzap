@@ -159,7 +159,7 @@ input.search-chat {
   height: calc(100% - 65px);
   overflow-y: scroll;
   width: 100%;
-  background-image: url("../img/chatbackground.jpeg");
+  background-image: url("../img/chatbackground.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
