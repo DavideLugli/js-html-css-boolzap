@@ -5,21 +5,33 @@
 }
 
 body {
-  /* background-color: #ece5dd; */
+font-family: 'Open Sans', sans-serif;
 }
 
-.header-green {
-  height: 10%;
-  width: 100%;
-  background-color: #128c7e;
-}
 
 main {
   height: 100vh;
-  background-color: #ece5dd;
+  background-color: lightgrey;
   overflow: hidden;
 }
+p.notified{
+  font-size: 14px;
+  text-decoration: underline;
+  color: dimgrey;
+}
+p.clock {
+  color: lightgrey;
+  font-size: 10px;
+}
+p.user-state {
+  font-size: 14px;
+  color: lightgrey;
+}
 
+p.last-access {
+  font-size: 14px;
+  color: dimgrey;
+}
 .flex {
   display: flex;
 }
@@ -27,15 +39,14 @@ main {
 .wrapper {
   width: 80%;
   height: 95%;
-  background-color: BlueViolet;
   margin: auto;
   z-index: 2;
 }
 
 .account-wrapper {
-  background-color: PaleGreen;
   height: 100%;
   width: 30%;
+  min-width: 250px;
 }
 
 .user-nav {
@@ -44,7 +55,7 @@ main {
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  background-color: Gainsboro;
+  background-color: ghostwhite;
 }
 
 img.avatar {
@@ -52,10 +63,6 @@ img.avatar {
   width: 50px;
 }
 
-/* .user-icons i {
-  padding: 0 10px;
-  color: darkgrey;
-} */
 .icon_top {
   padding: 0 10px;
   color: darkgrey;
@@ -71,14 +78,22 @@ img.avatar {
   padding: 12px;
   height: 75px;
   width: 100%;
-  background-color: LightSkyBlue;
+  background-color: lightSkyBlue;
   align-items: center;
 }
-
+.icon-circle-outline {
+  background-color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  justify-content:  center;
+  align-items: center;
+}
 .notification-banner i {
-  color: white;
+  color: lightSkyBlue;
   font-size: 35px;
-  padding-left: 10px;
+
+
 }
 
 .notification-text {
@@ -91,7 +106,7 @@ img.avatar {
 }
 
 .div-search {
-  background-color: Gainsboro;
+  background-color: ghostwhite;
   height: 40px;
   padding: 5px;
   justify-content: flex-start;
@@ -104,9 +119,9 @@ input.search-chat {
 }
 
 .account-chat-wrapper {
-  height: 70%;
+  height: calc(100% - 180px);
   width: 100%;
-  background-color: gold;
+  background-color: white;
   border: 1px solid lightgrey;
   box-shadow: rgba(0, 0, 0, 0.5);
   overflow-y: scroll;
@@ -123,7 +138,8 @@ input.search-chat {
   width: 100%;
   position: relative;
   margin-left: 0;
-  border: 1px solid lightgrey;
+  border: 1px solid ghostwhite;
+  border-left: 0;
 }
 
 .account-list li img {
@@ -139,6 +155,7 @@ input.search-chat {
   background-color: Turquoise;
   height: 100%;
   width: 70%;
+  min-width: 350px;
 }
 
 .chat-nav {
@@ -146,9 +163,9 @@ input.search-chat {
   height: 65px;
   width: 100%;
   justify-content: space-between;
-  border-left: 1px solid grey;
+  border-left: 1px solid lightgrey;
   align-items: center;
-  background-color: Gainsboro;
+  background-color: ghostwhite;
 }
 
 .current-chat-wrapper {
@@ -223,7 +240,7 @@ input.search-chat {
   align-items: center;
   height: 65px;
   width: 100%;
-  background-color: Gainsboro;
+  background-color: #ECE5DD;
   z-index: 2;
 }
 
