@@ -18,7 +18,6 @@ main {
   height: 100vh;
   background-color: #ece5dd;
   overflow: hidden;
-  position: relative;
 }
 
 .flex {
@@ -27,9 +26,9 @@ main {
 
 .wrapper {
   width: 80%;
-  height: 90vh;
+  height: 95%;
   background-color: BlueViolet;
-  margin: 0 auto;
+  margin: auto;
   z-index: 2;
 }
 
@@ -60,6 +59,12 @@ img.avatar {
 .icon_top {
   padding: 0 10px;
   color: darkgrey;
+}
+
+.icon_dark {
+  padding: 0 10px;
+  color: dimgrey;
+  font-size: 20px;
 }
 
 .notification-banner {
@@ -99,7 +104,7 @@ input.search-chat {
 }
 
 .account-chat-wrapper {
-  height: 80%;
+  height: 70%;
   width: 100%;
   background-color: gold;
   border: 1px solid lightgrey;
@@ -152,6 +157,7 @@ input.search-chat {
 
 .current-chat-screen {
   height: calc(100% - 65px);
+  overflow-y: scroll;
   width: 100%;
   background-image: url("../img/chatbackground.jpeg");
   background-size: cover;
@@ -159,8 +165,25 @@ input.search-chat {
 }
 
 .typing-bar {
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
   height: 65px;
   width: 100%;
   background-color: Gainsboro;
   z-index: 2;
+}
+
+input#send {
+  flex-basis: 80%;
+  height: 40px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 0;
+}
+
+input#send:hover,
+input#send:focus,
+input#send:active {
+  border: 2px solid #34B7F1;
 }
