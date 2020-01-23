@@ -164,6 +164,59 @@ input.search-chat {
   background-repeat: no-repeat;
 }
 
+.text-message-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: relative;
+  width: 90%;
+  margin: 10px 0;
+}
+
+.text-received {
+  background-color: white;
+  position: relative;
+  max-width: 25%;
+  margin-left: 10%;
+  text-align: center;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+.text-sent {
+  background-color: #D5F9BA;
+  justify-content: flex-end;
+  text-align: center;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+.text-sent span {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: none;
+}
+
+.text-sent:hover {
+  cursor: pointer;
+}
+
+.text-sent:hover span {
+  display: block;
+}
+
+.text-received span {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: none;
+}
+
+.text-received:hover span {
+  display: block;
+}
+
 .typing-bar {
   justify-content: space-between;
   padding: 10px;
