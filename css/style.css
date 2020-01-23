@@ -8,15 +8,17 @@ body {
   /* background-color: #ece5dd; */
 }
 
-header {
-  height: 10vh;
+.header-green {
+  height: 10%;
   width: 100%;
   background-color: #128c7e;
 }
 
 main {
-  height: 90vh;
+  height: 100vh;
   background-color: #ece5dd;
+  overflow: hidden;
+  position: relative;
 }
 
 .flex {
@@ -27,7 +29,8 @@ main {
   width: 80%;
   height: 90vh;
   background-color: BlueViolet;
-  margin: auto;
+  margin: 0 auto;
+  z-index: 2;
 }
 
 .account-wrapper {
@@ -50,7 +53,11 @@ img.avatar {
   width: 50px;
 }
 
-.user-icons i {
+/* .user-icons i {
+  padding: 0 10px;
+  color: darkgrey;
+} */
+.icon_top {
   padding: 0 10px;
   color: darkgrey;
 }
@@ -92,7 +99,7 @@ input.search-chat {
 }
 
 .account-chat-wrapper {
-  height: 70%;
+  height: 80%;
   width: 100%;
   background-color: gold;
   border: 1px solid lightgrey;
@@ -127,4 +134,33 @@ input.search-chat {
   background-color: Turquoise;
   height: 100%;
   width: 70%;
+}
+
+.chat-nav {
+  padding: 10px;
+  height: 65px;
+  width: 100%;
+  justify-content: space-between;
+  border-left: 1px solid grey;
+  align-items: center;
+  background-color: Gainsboro;
+}
+
+.current-chat-wrapper {
+  height: calc(100% - 65px);
+}
+
+.current-chat-screen {
+  height: calc(100% - 65px);
+  width: 100%;
+  background-image: url("../img/chatbackground.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.typing-bar {
+  height: 65px;
+  width: 100%;
+  background-color: Gainsboro;
+  z-index: 2;
 }
