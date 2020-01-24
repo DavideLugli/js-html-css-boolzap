@@ -5,33 +5,54 @@
 }
 
 body {
-font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
-
 
 main {
   height: 100vh;
   background-color: lightgrey;
   overflow: hidden;
 }
-p.notified{
+
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.notified {
   font-size: 14px;
   text-decoration: underline;
   color: dimgrey;
 }
+
 p.clock {
   color: lightgrey;
   font-size: 10px;
 }
-p.user-state {
+
+.user-state {
   font-size: 14px;
   color: lightgrey;
 }
 
+/* p.user-state {
+  font-size: 14px;
+  color: lightgrey;
+} */
 p.last-access {
   font-size: 14px;
   color: dimgrey;
 }
+
 .flex {
   display: flex;
 }
@@ -55,7 +76,7 @@ p.last-access {
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  background-color: ghostwhite;
+  background-color: rgb(234, 234, 234);
 }
 
 img.avatar {
@@ -63,37 +84,39 @@ img.avatar {
   width: 50px;
 }
 
-.icon_top {
+i {
   padding: 0 10px;
-  color: darkgrey;
+  font-size: 20px;
+}
+
+.icon_top {
+  color: rgb(177, 177, 177);
 }
 
 .icon_dark {
-  padding: 0 10px;
   color: dimgrey;
-  font-size: 20px;
 }
 
 .notification-banner {
   padding: 12px;
   height: 75px;
   width: 100%;
-  background-color: lightSkyBlue;
+  background-color: rgb(142, 218, 252);
   align-items: center;
 }
+
 .icon-circle-outline {
   background-color: white;
   border-radius: 50%;
   width: 50px;
   height: 50px;
-  justify-content:  center;
+  justify-content: center;
   align-items: center;
 }
+
 .notification-banner i {
-  color: lightSkyBlue;
-  font-size: 35px;
-
-
+  color: rgb(142, 218, 252);
+  font-size: 30px;
 }
 
 .notification-text {
@@ -108,14 +131,26 @@ img.avatar {
 .div-search {
   background-color: ghostwhite;
   height: 40px;
+  width: 100%;
   padding: 5px;
   justify-content: flex-start;
+}
+
+.wrapper-input {
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  background: white;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
 }
 
 input.search-chat {
   height: 100%;
   width: 100%;
-  border-radius: 5px;
+  border: 0;
 }
 
 .account-chat-wrapper {
@@ -123,7 +158,6 @@ input.search-chat {
   width: 100%;
   background-color: white;
   border: 1px solid lightgrey;
-  box-shadow: rgba(0, 0, 0, 0.5);
   overflow-y: scroll;
 }
 
@@ -152,7 +186,6 @@ input.search-chat {
 }
 
 .chat-wrapper {
-  background-color: Turquoise;
   height: 100%;
   width: 70%;
   min-width: 350px;
@@ -165,7 +198,7 @@ input.search-chat {
   justify-content: space-between;
   border-left: 1px solid lightgrey;
   align-items: center;
-  background-color: ghostwhite;
+  background-color: rgb(234, 234, 234);
 }
 
 .current-chat-wrapper {
@@ -173,15 +206,21 @@ input.search-chat {
 }
 
 .current-chat-screen {
+  display: none;
   height: calc(100% - 65px);
   overflow-y: scroll;
+  padding: 30px;
   width: 100%;
   background-image: url("../img/chatbackground.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-.text-message-wrapper {
+.current-chat-screen.active {
+  display: block;
+}
+
+/* .text-message-wrapper {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
@@ -232,6 +271,47 @@ input.search-chat {
 
 .text-received:hover span {
   display: block;
+} */
+.message {
+  min-width: 30%;
+  max-width: 60%;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.message-options {
+  display: none;
+}
+
+.message:hover .message-options {
+  display: block;
+}
+
+.message-top {
+  justify-content: space-between;
+  /* justify-content: space-around; */
+}
+
+.message-bottom {
+  text-align: right;
+}
+
+.message.sent {
+  float: right;
+  clear: both;
+  background-color: #D5F9BA;
+}
+
+.message.received {
+  float: left;
+  clear: both;
+  background-color: white;
+}
+
+.message-time {
+  color: lightgrey;
+  font-size: 10px;
 }
 
 .typing-bar {
@@ -240,7 +320,7 @@ input.search-chat {
   align-items: center;
   height: 65px;
   width: 100%;
-  background-color: #ECE5DD;
+  background-color: rgb(234, 234, 234);
   z-index: 2;
 }
 

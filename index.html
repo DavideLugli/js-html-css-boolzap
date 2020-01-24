@@ -15,9 +15,10 @@
 
 <body>
   <main class="flex">
-    <!-- <div class="header-green"></div> -->
     <div class="wrapper flex">
+      <!-- sezione sx (account) -->
       <div class="account-wrapper">
+        <!-- mio account -->
         <div class="user-nav flex">
           <img class="avatar" src="img/avatar.webp" alt="">
           <div class="user-icons flex">
@@ -26,34 +27,46 @@
             <i class="fas fa-ellipsis-v icon_top"></i>
           </div>
         </div>
+        <!-- / mio account -->
+        <!-- notifiche -->
         <div class="notification-banner flex">
           <div class="icon-circle-outline flex">
-
             <i class="far fa-bell-slash"></i>
           </div>
           <div class="notification-text">
             <h5>Ricevi notifiche di nuovi messaggi</h5>
-            <p class="notified">Attiva notifiche desktop</p>
+            <a class="notified" href="#">Attiva notifiche desktop</a>
+            <!-- <p class="notified"></p> -->
           </div>
         </div>
+        <!-- / notifiche -->
+        <!-- search bar -->
         <div class="div-search flex">
-          <i class="fas fa-search"></i>
-          <input class="search-chat" type="search" name="" value="" placeholder="cerca o inizia una nuova chat">
+          <div class="wrapper-input flex">
+            <div class="search-icon">
+              <i class="fas fa-search icon_top"></i>
+            </div>
+            <input class="search-chat" type="search" name="" value="" placeholder="cerca o inizia una nuova chat">
+          </div>
         </div>
+        <!-- / search bar -->
+        <!-- lista contatti -->
         <div class="account-chat-wrapper">
           <ul class="account-list">
+            <!-- singolo account -->
             <li class="flex" data-elemt="1">
               <img class="user-avatar" src="img/avatar-utente.jpg" alt="">
               <div class="account-name">
                 <h4>Luka</h4>
                 <p class="user-state">Always Flexin</p>
-              </div>
+</div>
               <p class="clock">11:45</p>
             </li>
+            <!--/ singolo account -->
             <li class="flex" data-elemt="2">
               <img class="user-avatar" src="img/avatar_2.jpg" alt="">
               <div class="account-name">
-                <h4>Misha</h4>
+                <h4>Leonardo di Cabrio</h4>
                 <p class="user-state">Always Flexin</p>
               </div>
               <p class="clock">11:45</p>
@@ -61,7 +74,7 @@
             <li class="flex" data-elemt="3">
               <img class="user-avatar" src="img/avatar_3.jpg" alt="">
               <div class="account-name">
-                <h4>Mirko</h4>
+                <h4>Paul Izia</h4>
                 <p class="user-state">Always Flexin</p>
               </div>
               <p class="clock">11:45</p>
@@ -77,7 +90,7 @@
             <li class="flex" data-elemt="5">
               <img class="user-avatar" src="img/avatar_5.jpg" alt="">
               <div class="account-name">
-                <h4>Babbo</h4>
+                <h4>Omar Iuolo</h4>
                 <p class="user-state">Always Flexin</p>
               </div>
               <p class="clock">11:45</p>
@@ -85,7 +98,7 @@
             <li class="flex" data-elemt="6">
               <img class="user-avatar" src="img/avatar_7.jpg" alt="">
               <div class="account-name">
-                <h4>Mariottide</h4>
+                <h4>Tommy Shelby</h4>
                 <p class="user-state">Always Flexin</p>
               </div>
               <p class="clock">11:45</p>
@@ -93,7 +106,7 @@
             <li class="flex" data-elemt="7">
               <img class="user-avatar" src="img/avatar_6.jpg" alt="">
               <div class="account-name">
-                <h4>Ex</h4>
+                <h4>Diletta Privato</h4>
                 <p class="user-state">Always Flexin</p>
               </div>
               <p class="clock">11:45</p>
@@ -101,7 +114,7 @@
             <li class="flex" data-elemt="8">
               <img class="user-avatar" src="img/avatar_ex.jpg" alt="">
               <div class="account-name">
-                <h4>Altra ex</h4>
+                <h4>La Zia</h4>
                 <p class="user-state">Always Flexin</p>
               </div>
               <p class="clock">11:45</p>
@@ -124,7 +137,10 @@
             </li>
           </ul>
         </div>
+        <!-- / lista contatti -->
       </div>
+      <!-- / sezione sx -->
+      <!-- sezione dx (chat corrente) -->
       <div class="chat-wrapper">
         <div class="chat-nav flex">
           <img class="avatar" src="img/avatar-utente.jpg" alt="">
@@ -139,37 +155,66 @@
           </div>
         </div>
         <div class="current-chat-wrapper">
-          <div class="current-chat-screen">
-            <div class="text-message-wrapper">
-              <div class="text-sent">
-                <p>ciao Luka stasera alla fine ci sei?</p>
-                <span><i class="fas fa-angle-down"></i></span>
-              </div>
-            </div>
-            <div class="text-message-wrapper">
-              <div class="text-sent">
-                <p>sto facendo la spesa</p>
-                <span><i class="fas fa-angle-down"></i></span>
-              </div>
-            </div>
+          <div class="current-chat-screen active" data-elemt="1">
 
-            <div class="text-received">
-              <p>no bro pacco alla fine</p>
-              <span><i class="fas fa-angle-down"></i></span>
-            </div>
+            <div class="message sent">
+        <div class="message-top flex">
+          <p class="message-text">ciao Luka stasera alla fine ci sei?</p>
+          <i class="fa fa-chevron-down f-right message-options"></i>
+        </div>
+        <div class="message-bottom">
+          <small class="message-time">10:40</small>
+        </div>
+      </div>
+      <div class="message received">
+        <div class="message-top flex">
+          <p class="message-text">no bro pacco alla fine</p>
+          <i class="fa fa-chevron-down f-right message-options"></i>
+        </div>
+        <div class="message-bottom">
+          <small class="message-time">10:40</small>
+        </div>
+      </div>
           </div>
+          <div class="current-chat-screen " data-elemt="">
+
+            <div class="message sent">
+        <div class="message-top flex">
+          <p class="message-text">ciao Luka stasera alla fine ci sei?</p>
+          <i class="fa fa-chevron-down f-right message-options"></i>
+        </div>
+        <div class="message-bottom">
+          <small class="message-time">10:40</small>
+        </div>
+      </div>
+      <div class="message received">
+        <div class="message-top flex">
+          <p class="message-text">no bro pacco alla fine</p>
+          <i class="fa fa-chevron-down f-right message-options"></i>
+        </div>
+        <div class="message-bottom">
+          <small class="message-time">10:40</small>
+        </div>
+      </div>
+          </div>
+          <!-- template messaggio -->
           <div class="template">
-            <div class="text-message-wrapper">
-              <div class="text-sent">
-                <p></p>
-                <span><i class="fas fa-angle-down"></i></span>
-              </div>
-            </div>
-          </div>
+    <div class="message">
+      <div class="message-top">
+        <p class="message-text"></p>
+        <i class="fa fa-chevron-down f-right message-options"></i>
+      </div>
+      <div class="message-bottom">
+        <small class="message-time"></small>
+      </div>
+    </div>
+  </div>
+  <!-- / template messaggio -->
+
           <div class="typing-bar flex">
             <i class="far fa-grin icon_dark"></i>
-            <input id="send" class="send" type="text" name="" placeholder="Scrivi un messaggio">
-            <i class="fab fa-telegram-plane icon_dark"></i>
+            <input id="send" class="send-message" type="text" name="" placeholder="Scrivi un messaggio">
+            <i class="fab fa-telegram-plane icon_dark icon-send"></i>
           </div>
         </div>
       </div>
