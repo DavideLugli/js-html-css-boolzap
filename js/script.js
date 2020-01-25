@@ -16,6 +16,12 @@ $(document).ready(function() {
         searchChat();
       }
     });
+  // funzione mostra/nascondi dropdown con toggle
+  $('.message i.message-options').click(
+    function() {
+      $(this).next().toggle('slow').removeClass('hidden');
+    }
+  );
 });
 
 function sendMessage() {
@@ -72,3 +78,21 @@ function searchChat() {
     }
   });
 }
+
+
+
+// mostra/nascondi dropdown coi click sull'icona, non funzionante
+
+// $('.message i.message-options').click(
+//   function() {
+//     $(this).next().removeClass('hidden');
+//   }
+// );
+// var dropdownDelete = $('.delete-dropdown');
+// if (dropdownDelete.hasClass('hidden') == false) {
+//   $('.message i.message-options').click(
+//     function() {
+//       $(this).next().addClass('hidden');
+//     }
+//   )
+// }
