@@ -44,10 +44,6 @@ p.clock {
   color: lightgrey;
 }
 
-/* p.user-state {
-  font-size: 14px;
-  color: lightgrey;
-} */
 p.last-access {
   font-size: 14px;
   color: dimgrey;
@@ -93,6 +89,9 @@ i {
   color: rgb(177, 177, 177);
 }
 
+.search-icon .icon_top {
+  font-size: 16px;
+}
 .icon_dark {
   color: dimgrey;
 }

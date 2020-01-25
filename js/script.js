@@ -8,6 +8,14 @@ $(document).ready(function() {
         sendMessage();
       }
     });
+  $('input.search-chat').keyup(
+    function(backspace) {
+      if (backspace.which == 8 || backspace.keyCode == 8) {
+        searchChat();
+      } else {
+        searchChat();
+      }
+    });
 });
 
 function sendMessage() {
@@ -48,4 +56,19 @@ function addZero(number) {
     number = '0' + number;
   }
   return number;
+}
+
+
+// funzione ricerca chat
+
+function searchChat() {
+  var searchFor = $('input.search-chat').val().toLowerCase();
+  $(".account_convo").each(function() {
+    var accountName = $(this).find('h4').text().toLowerCase();
+    if (accountName.includes(searchFor)) {
+      $(this).fadeIn();
+    } else {
+      $(this).fadeOut();
+    }
+  });
 }
