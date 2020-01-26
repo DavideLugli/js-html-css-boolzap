@@ -22,6 +22,20 @@ $(document).ready(function() {
       $(this).next().toggle('slow').removeClass('hidden');
     }
   );
+  // per elementi creati 'al volo' con js
+  $(document).on('click', '.message i.message-options', function() {
+    $(this).next().toggle('slow').removeClass('hidden');
+  });
+  // cancellare Messaggio
+  $('.delete-mex').click(
+    function() {
+      $(this).parents('.message').remove();
+    }
+  );
+  // per elementi creati 'al volo' con js
+  $(document).on('click', '.delete-mex', function() {
+    $(this).parents('.message').remove();
+  })
 });
 
 function sendMessage() {
