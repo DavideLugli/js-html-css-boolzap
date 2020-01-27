@@ -17,11 +17,11 @@ $(document).ready(function() {
       }
     });
   // funzione mostra/nascondi dropdown con toggle
-  $('.message i.message-options').click(
-    function() {
-      $(this).next().toggle('slow').removeClass('hidden');
-    }
-  );
+  // $('.message i.message-options').click(
+  //   function() {
+  //     $(this).next().toggle('slow').removeClass('hidden');
+  //   }
+  // );
   // per elementi creati 'al volo' con js
   $(document).on('click', '.message i.message-options', function() {
     $(this).next().toggle('slow').removeClass('hidden');
@@ -53,6 +53,7 @@ function sendMessage() {
     // aggiungo classe sent e testo del messaggio
     newMessage.addClass('sent');
     $('.current-chat-screen').append(newMessage);
+    scrollChat();
     // svuoto l'input
     $('#send').val('');
     // funzione di risposta automatica dopo 1 sec
@@ -66,6 +67,7 @@ function sendMessage() {
       autoReply.find('.message-time').text(time);
       autoReply.addClass('received');
       $('.current-chat-screen').append(autoReply);
+      scrollChat();
     }, 1000);
   }
 }
@@ -93,8 +95,32 @@ function searchChat() {
   });
 }
 
+// funzione che scrolla
+function scrollChat() {
+  // altezza elemento conversazione attiva
+  var chatHeight = $('.current-chat-screen.active').height();
+  // spostiamo scroll container di tutte le conversazioni
+  $('.current-chat-screen.active').scrollTop(chatHeight);
+}
+// cliccando sul contatto mostro chat corrispondente,
+// togliendo active all'altra conversazione e aggiungendolo a quella
+$(".account_convo[data-elemt='2']").click(
+  function() {
+    $('.current-chat-screen.active').removeClass('active');
+    var newChat = $(".current-chat-screen[data-elemt='2']");
+    newChat.addClass('active');
+    // rimuovo img e nome
+    $('.chat-nav').find('img').hide();
+    $('.chat-nav').find('h4').hide();
+    // aggiungo nuove imag
+    var newImg = $(".account_convo[data-elemt='2']").child('img.user-avatar');
+    var newName = $(".account_convo[data-elemt='2']").find('h4');
+    $('.chat-nav').show(newImg);
+    $('.chat-nav .chat_notification').show(newName);
 
 
+  }
+);
 // mostra/nascondi dropdown coi click sull'icona, non funzionante
 
 // $('.message i.message-options').click(
