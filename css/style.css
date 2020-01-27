@@ -6,11 +6,18 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
+  /* sfondo generato con un tool */
+  background: #128c7e; /* Old browsers */
+  background: -moz-linear-gradient(top,  #128c7e 0%, #128c7e 15%, #128c7e 15%, #ece5dd 15%, #ece5dd 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #128c7e 0%,#128c7e 15%,#128c7e 15%,#ece5dd 15%,#ece5dd 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #128c7e 0%,#128c7e 15%,#128c7e 15%,#ece5dd 15%,#ece5dd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#128c7e', endColorstr='#ece5dd',GradientType=0 ); /* IE6-9 */
+
+
 }
 
 main {
   height: 100vh;
-  background-color: lightgrey;
   overflow: hidden;
 }
 
@@ -32,6 +39,9 @@ main {
   float: right;
 }
 
+.account_convo.active {
+  background-color: rgb(234, 234, 234);
+}
 .notified {
   font-size: 14px;
   text-decoration: underline;
@@ -179,8 +189,12 @@ input.search-chat {
   border: 1px solid ghostwhite;
   border-left: 0;
 }
+.account-list li:hover {
+background-color: rgb(234,234,234);
+}
 
-.account-list li img {
+
+.user-avatar {
   width: 50px;
   border-radius: 50%;
 }

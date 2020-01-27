@@ -16,22 +16,16 @@ $(document).ready(function() {
         searchChat();
       }
     });
-  // funzione mostra/nascondi dropdown con toggle
-  // $('.message i.message-options').click(
-  //   function() {
-  //     $(this).next().toggle('slow').removeClass('hidden');
-  //   }
-  // );
-  // per elementi creati 'al volo' con js
+  // per garantire che funzioni anche per elementi creati 'al volo' con js
   $(document).on('click', '.message i.message-options', function() {
     $(this).next().toggle('slow').removeClass('hidden');
   });
   // cancellare Messaggio
-  $('.delete-mex').click(
-    function() {
-      $(this).parents('.message').remove();
-    }
-  );
+  // $('.delete-mex').click(
+  //   function() {
+  //     $(this).parents('.message').remove();
+  //   }
+  // );
   // per elementi creati 'al volo' con js
   $(document).on('click', '.delete-mex', function() {
     $(this).parents('.message').remove();
@@ -52,7 +46,7 @@ function sendMessage() {
     newMessage.find('.message-time').text(time);
     // aggiungo classe sent e testo del messaggio
     newMessage.addClass('sent');
-    $('.current-chat-screen').append(newMessage);
+    $('.current-chat-screen.active').append(newMessage);
     scrollChat();
     // svuoto l'input
     $('#send').val('');
@@ -66,7 +60,7 @@ function sendMessage() {
       var time = hours + ':' + minutes;
       autoReply.find('.message-time').text(time);
       autoReply.addClass('received');
-      $('.current-chat-screen').append(autoReply);
+      $('.current-chat-screen.active').append(autoReply);
       scrollChat();
     }, 1000);
   }
@@ -97,42 +91,43 @@ function searchChat() {
 
 // funzione che scrolla
 function scrollChat() {
-  // altezza elemento conversazione attiva
   var chatHeight = $('.current-chat-screen.active').height();
-  // spostiamo scroll container di tutte le conversazioni
+
   $('.current-chat-screen.active').scrollTop(chatHeight);
 }
+// cliccando sul contatto si apre chat corrispondente
+$(document).on('click', '.account_convo', function() {
+  $('.account_convo').removeClass('active');
+  $(this).addClass('active');
+  var currentChat = $('.current-chat-screen').eq($(this).index());
+  var currentImg;
+  var currentUserName;
+  $('.current-chat-screen').removeClass('active');
+  currentChat.addClass('active');
+  $('.chat-nav').find('img').remove();
+  $('.chat-nav').find('h4').text('');
+  currentImg = $(this).find('img').clone();
+  $('.chat-nav').prepend(currentImg);
+  currentUserName = $(this).find('h4').clone();
+  $('.chat-nav h4').append(currentUserName);
+});
 // cliccando sul contatto mostro chat corrispondente,
 // togliendo active all'altra conversazione e aggiungendolo a quella
-$(".account_convo[data-elemt='2']").click(
-  function() {
-    $('.current-chat-screen.active').removeClass('active');
-    var newChat = $(".current-chat-screen[data-elemt='2']");
-    newChat.addClass('active');
-    // rimuovo img e nome
-    $('.chat-nav').find('img').hide();
-    $('.chat-nav').find('h4').hide();
-    // aggiungo nuove imag
-    var newImg = $(".account_convo[data-elemt='2']").child('img.user-avatar');
-    var newName = $(".account_convo[data-elemt='2']").find('h4');
-    $('.chat-nav').show(newImg);
-    $('.chat-nav .chat_notification').show(newName);
 
-
-  }
-);
-// mostra/nascondi dropdown coi click sull'icona, non funzionante
-
-// $('.message i.message-options').click(
+// $(".account_convo[data-elemt='2']").click(
 //   function() {
-//     $(this).next().removeClass('hidden');
+//     $('.current-chat-screen.active').removeClass('active');
+//     var newChat = $(".current-chat-screen[data-elemt='2']");
+//     newChat.addClass('active');
+//     // rimuovo img e nome
+//     $('.chat-nav').find('img').hide();
+//     $('.chat-nav').find('h4').hide();
+//     // aggiungo nuove imag
+//     var newImg = $(".account_convo[data-elemt='2']").child('img.user-avatar');
+//     var newName = $(".account_convo[data-elemt='2']").find('h4');
+//     $('.chat-nav').show(newImg);
+//     $('.chat-nav .chat_notification').show(newName);
+//
+//
 //   }
 // );
-// var dropdownDelete = $('.delete-dropdown');
-// if (dropdownDelete.hasClass('hidden') == false) {
-//   $('.message i.message-options').click(
-//     function() {
-//       $(this).next().addClass('hidden');
-//     }
-//   )
-// }
