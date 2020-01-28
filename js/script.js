@@ -21,11 +21,11 @@ $(document).ready(function() {
     $(this).next().toggle('slow').removeClass('hidden');
   });
   // cancellare Messaggio
-  // $('.delete-mex').click(
-  //   function() {
-  //     $(this).parents('.message').remove();
-  //   }
-  // );
+  $('.delete-mex').click(
+    function() {
+      $(this).parents('.message').remove();
+    }
+  );
   // per elementi creati 'al volo' con js
   $(document).on('click', '.delete-mex', function() {
     $(this).parents('.message').remove();
@@ -66,6 +66,7 @@ function sendMessage() {
   }
 }
 
+
 // aggiunge uno 0 ai minuti nell'ora nel caso i minuti attuali siano <10
 function addZero(number) {
   if (number < 10) {
@@ -90,10 +91,15 @@ function searchChat() {
 }
 
 // funzione che scrolla
+// function scrollChat() {
+//   var chatHeight = $('.current-chat-screen.active').height();
+//
+//   $('.current-chat-screen.active').scrollTop(chatHeight);
+// }
 function scrollChat() {
   var chatHeight = $('.current-chat-screen.active').height();
 
-  $('.current-chat-screen.active').scrollTop(chatHeight);
+  $('.chat-container').scrollTop(chatHeight);
 }
 // cliccando sul contatto si apre chat corrispondente
 $(document).on('click', '.account_convo', function() {
@@ -111,6 +117,15 @@ $(document).on('click', '.account_convo', function() {
   currentUserName = $(this).find('h4').clone();
   $('.chat-nav h4').append(currentUserName);
 });
+
+
+// cambio icona sul focus input
+$('input.send-message').focus(function(){
+    $('.icon-send').removeClass('fa fa-microphone').addClass('fab fa-telegram-plane');
+  }).blur(function(){
+    $('.icon-send').removeClass('fab fa-telegram-plane').addClass('fa fa-microphone');
+  });
+
 // cliccando sul contatto mostro chat corrispondente,
 // togliendo active all'altra conversazione e aggiungendolo a quella
 

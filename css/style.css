@@ -219,19 +219,30 @@ background-color: rgb(234,234,234);
   background-color: rgb(234, 234, 234);
 }
 
-.current-chat-wrapper {
+/* .current-chat-wrapper {
   height: calc(100% - 65px);
-}
+} */
 
-.current-chat-screen {
-  display: none;
-  height: calc(100% - 65px);
+.chat-container{
+  height: calc(100% - 130px);
   overflow-y: scroll;
-  padding: 30px;
-  width: 100%;
   background-image: url("../img/chatbackground.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+
+.current-chat-screen {
+  display: none;
+  /* height: calc(100% - 65px); */
+  min-height: 100%;
+  /* overflow-y: scroll; */
+  padding: 30px;
+  width: 100%;
+  /* background-image: url("../img/chatbackground.jpg");
+  background-size: cover;
+  background-repeat: no-repeat; */
+
 }
 
 .current-chat-screen.active {
