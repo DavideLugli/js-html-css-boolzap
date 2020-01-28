@@ -18,7 +18,7 @@ $(document).ready(function() {
     });
   // per garantire che funzioni anche per elementi creati 'al volo' con js
   $(document).on('click', '.message i.message-options', function() {
-    $(this).next().toggle('slow').removeClass('hidden');
+    $(this).next().toggle().removeClass('hidden');
   });
   // cancellare Messaggio
   $('.delete-mex').click(
@@ -96,9 +96,9 @@ function searchChat() {
 //
 //   $('.current-chat-screen.active').scrollTop(chatHeight);
 // }
+
 function scrollChat() {
   var chatHeight = $('.current-chat-screen.active').height();
-
   $('.chat-container').scrollTop(chatHeight);
 }
 // cliccando sul contatto si apre chat corrispondente
